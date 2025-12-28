@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aaryan | NextGen Showcase</title>
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar reveal">
+    <h2 class="logo">Aaryan</h2>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero reveal">
+    <h1>Building Next-Gen Digital Experiences</h1>
+    <p>Developer • Designer • Innovator</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn primary">View Work</a>
+      <a href="#contact" class="btn secondary">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section reveal">
+    <h2>About Me</h2>
+    <p>
+      I’m a tech enthusiast focused on building modern, scalable,
+      and user-centric digital products using clean design and efficient code.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section gray reveal">
+    <h2>Skills</h2>
+    <div class="card-grid">
+      <div class="card reveal">HTML & CSS</div>
+      <div class="card reveal">JavaScript</div>
+      <div class="card reveal">React</div>
+      <div class="card reveal">UI / UX Design</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section reveal">
+    <h2>Projects</h2>
+    <div class="card-grid">
+      <div class="project-card reveal">
+        <h3>BioTraces</h3>
+        <p>Biometric identity management platform</p>
+      </div>
+      <div class="project-card reveal">
+        <h3>AI Resume Filter</h3>
+        <p>AI-driven recruitment automation</p>
+      </div>
+      <div class="project-card reveal">
+        <h3>Travel Chatbot</h3>
+        <p>WhatsApp-based itinerary planner</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section gray reveal">
+    <h2>Contact</h2>
+    <p>Let’s build something amazing together.</p>
+    <a href="mailto:your@email.com" class="btn primary">Email Me</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="reveal">
+    <p>© 2025 Aaryan. All rights reserved.</p>
+  </footer>
+
+  <!-- SCROLL REVEAL SCRIPT -->
+  <script>
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
