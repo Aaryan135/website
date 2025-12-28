@@ -1388,4 +1388,78 @@ ul, ol {
 ::-webkit-scrollbar-thumb:hover {
     background: hsla(217, 91%, 60%, 0.5);
 }
+/* ============================================
+   CALL BUTTON - CUSTOM UI
+   ============================================ */
+.call-link {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-bg-glass);
+    border: 1px solid hsla(217, 91%, 60%, 0.2);
+    transition: all var(--transition-slow);
+}
 
+/* Glowing background effect on hover */
+.call-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        hsla(217, 91%, 60%, 0.1),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.call-link:hover::before {
+    left: 100%;
+}
+
+.call-link:hover {
+    border-color: var(--color-accent-blue);
+    box-shadow: var(--shadow-glow-blue);
+    transform: translateX(10px) scale(1.02);
+}
+
+/* Animated Phone Icon */
+.phone-icon {
+    display: inline-block;
+    animation: phone-ring 2s infinite ease-in-out;
+}
+
+@keyframes phone-ring {
+    0% { transform: rotate(0) scale(1); }
+    10% { transform: rotate(-15deg) scale(1.1); }
+    20% { transform: rotate(15deg) scale(1.1); }
+    30% { transform: rotate(-15deg) scale(1.1); }
+    40% { transform: rotate(0) scale(1); }
+    100% { transform: rotate(0) scale(1); }
+}
+
+/* Enhancing the Text */
+.call-link .link-label {
+    color: var(--color-accent-blue);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.call-link .link-value {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    background: linear-gradient(to right, #fff, var(--color-text-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .call-link {
+        padding: var(--space-lg);
+        justify-content: center;
+    }
+}
